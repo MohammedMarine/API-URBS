@@ -1,0 +1,45 @@
+{
+  "width": 480,
+  "height": 421,
+  "cx": [
+    [ "WISHLIST", 183 ],
+    [ "ADD", 307 ],
+    [ "CUSTOMIZE", 53 ],
+    [ "ORDER", 183 ],
+    [ "COMPOSE", 307 ],
+    [ "PRODUCT", 424 ],
+    [ "USER", 53 ],
+    [ "GENERATE", 183 ],
+    [ "POSSESS", 424 ],
+    [ "UPDATE", 183 ],
+    [ "CART", 307 ]
+  ],
+  "cy": [
+    [ "WISHLIST", 51 ],
+    [ "ADD", 51 ],
+    [ "CUSTOMIZE", 160 ],
+    [ "ORDER", 160 ],
+    [ "COMPOSE", 160 ],
+    [ "PRODUCT", 160 ],
+    [ "USER", 286 ],
+    [ "GENERATE", 286 ],
+    [ "POSSESS", 286 ],
+    [ "UPDATE", 387 ],
+    [ "CART", 387 ]
+  ],
+  "shift": [
+    [ "ADD,WISHLIST,0", 0 ],
+    [ "ADD,PRODUCT,0", 0 ],
+    [ "CUSTOMIZE,WISHLIST,0", 0 ],
+    [ "CUSTOMIZE,USER,0", 0 ],
+    [ "COMPOSE,CART,0", 0 ],
+    [ "COMPOSE,ORDER,0", 0 ],
+    [ "GENERATE,USER,0", 0 ],
+    [ "GENERATE,ORDER,0", 0 ],
+    [ "POSSESS,CART,0", 0 ],
+    [ "POSSESS,PRODUCT,0", 0 ],
+    [ "UPDATE,CART,0", 0 ],
+    [ "UPDATE,USER,0", 0 ]
+  ],
+  "ratio": []
+}

@@ -1,0 +1,11 @@
+digraph {
+  node [shape=box]
+  "WISHLIST" -> "ADD"
+  "PRODUCT" -> "ADD"
+  "USER" -> "CART"
+  "CART" -> "ORDER"
+  "CART" -> "POSSESS"
+  "PRODUCT" -> "POSSESS"
+  "ORDER" -> "USER"
+  "USER" -> "WISHLIST"
+}

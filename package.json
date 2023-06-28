@@ -1,0 +1,25 @@
+{
+  "name": "urbs",
+  "version": "0.0.1",
+  "description": "API Urbs",
+  "main": "index.js",
+  "scripts": {
+    "test": "tests"
+  },
+  "author": "MM",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "email-validator": "^2.0.4",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "pg": "^8.11.1",
+    "sequelize": "^6.32.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.43.0",
+    "nodemon": "^1.14.9"
+  }
+}

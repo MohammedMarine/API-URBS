@@ -1,0 +1,25 @@
+%%mocodo
+:::
+WISHLIST: code_wishlist, name, date, #code_user->USER->code_user
+:
+ADD: #code_wishlist->WISHLIST->code_wishlist, _#code_product->PRODUCT->code_product
+:::
+
+
+:::
+ORDER: code_order, date, paymentMethod, #code_cart->CART->code_cart
+:::
+PRODUCT: code_product, name, color, size, price
+:
+
+
+:
+USER: code_user, firstname, lastname, email, password, address, zipcode, #code_order->ORDER->code_order
+:::::
+POSSESS: #code_cart->CART->code_cart, _#code_product->PRODUCT->code_product
+:
+
+
+:::::
+CART: code_cart, #code_user->USER->code_user
+:::
