@@ -17,8 +17,8 @@ Cart.belongsToMany(Product, {
 Product.belongsToMany(Cart, {
     as: 'carts',
     through: 'cart_product',
-    foreignKey: 'dproduct_id',
-    otherKey: 'cart_i',
+    foreignKey: 'product_id',
+    otherKey: 'cart_id',
 });
 
 //Product and Whishlist
@@ -35,4 +35,46 @@ Whishlist.belongsToMany(Product, {
     foreignKey: 'whishlist_id',
     otherKey: 'product_id',
 });
+
+//User and Whishlist
+User.hasMany(Whishlist, {
+    foreignKey: 'user_id',
+    as: 'whishlists',
+});
+
+Whishlist.belongsTo(User, {
+    foreignKey: 'user_id',
+    as: 'user',
+});
+
+//User and Order
+Order.hasMany(User,{
+    foreignKey: 'order_id',
+    as: 'users',
+});
+
+User.belongsTo(Order, {
+    foreignKey: 'order_id',
+    as: 'order',
+});
+
+//Order and Cart
+Order.belongsTo(Cart, {
+    foreignKey: 'cart_id',
+    as: 'validated_cart',
+});
+
+//User and Cart
+User.hasMany(Cart, {
+    foreignKey: 'user_id',
+    as: 'carts',
+});
+
+Cart.belongsTo(User, {
+    foreignKey: 'user_id',
+    as: 'user',
+});
+
+module.exports = { Cart, Order, Product, User, Whishlist };
+
 

@@ -5,7 +5,8 @@ class Order extends Model { }
 
 Order.init({
     paymentMethod: DataTypes.TEXT,
-    cart_id: DataTypes.INTEGER
+    cart_id: DataTypes.INTEGER,
+    user_id: DataTypes.INTEGER
 },
     {
         sequelize,
