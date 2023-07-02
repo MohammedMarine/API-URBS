@@ -3,7 +3,7 @@ const Product = require('../models/product');
 const shopController = {
     async getAllProducts(req, res) {
         try {
-            //lets call the product model
+            //calling the product model
             const products = await Product.findAll();
             res.json(products);
         } catch (error) {
@@ -14,7 +14,7 @@ const shopController = {
 
     async getOneProduct(req, res) {
         try {
-            //lets get the product's id from the url
+            //getting the product's id from the url
             const productId = req.params.id;
             const product = await Product.findByPk(productId);
             if (product) {

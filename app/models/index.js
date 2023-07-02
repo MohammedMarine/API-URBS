@@ -48,7 +48,7 @@ Whishlist.belongsTo(User, {
 });
 
 //User and Order
-Order.hasMany(User,{
+Order.hasMany(User,{     // TO MODIFY
     foreignKey: 'order_id',
     as: 'users',
 });

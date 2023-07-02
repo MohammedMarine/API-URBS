@@ -3,12 +3,12 @@ const {Cart, Product} = require('../models');
 
 const cartController = {
     async addProduct(req, res) {
-        const productId = req.params.id;
+        const productId = req.params.id; //getting the product's id in the URL
         const cart = req.session.cart
             try {
-                const product = await Product.findByPk(productId);
+                const product = await Product.findByPk(productId); //finding a match for this id in DB
                 if (product) {
-                    req.session.cart.push(product);
+                    req.session.cart.push(product); //Pushing the product in the user session
                     res.json(cart)
                 } else {
                     res.status(404).send(`The product you are trying to buy does not exist yet`);
