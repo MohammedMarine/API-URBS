@@ -1,7 +1,6 @@
-const { Whishlist } = require('../models');
-const Product = require ('../models/product');
+const Product = require('../models/product');
 
-const productController = {
+const shopController = {
     async getAllProducts(req, res) {
         try {
             //lets call the product model
@@ -13,12 +12,12 @@ const productController = {
         }
     },
 
-    async getOneProduct (req, res) {
+    async getOneProduct(req, res) {
         try {
             //lets get the product's id from the url
             const productId = req.params.id;
             const product = await Product.findByPk(productId);
-            if (product){
+            if (product) {
                 res.json(product);
             } else {
                 res.status(404).json('The product ' + productId + ' does not exist')
@@ -27,8 +26,8 @@ const productController = {
             console.trace(error);
             res.status(500).json(error.toString());
         }
-    },
+    }
 
-}
+};
 
-module.exports = productController;
+module.exports = shopController;
