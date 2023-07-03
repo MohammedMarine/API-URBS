@@ -15,8 +15,10 @@ router.get('/', (req, res) => {
 router.get('/shop', shopController.getAllProducts);
 router.get('/shop/products/:id', shopController.getOneProduct);
 
+
 /** Cart */
 router.get('/cart/add/:id', cartController.addProduct);
+router.get('/cart/remove/:id', cartController.removeProduct);
 router.get('/cart', cartController.showCart);
 
 

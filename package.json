@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "db:reset": "psql -U urbs -d urbs -f ./data/01-create_tables.sql",
+    "db:seed": "psql -U urbs -d urbs -f ./data/02-populate_tables.sql"
   },
   "author": "MM",
   "license": "ISC",
