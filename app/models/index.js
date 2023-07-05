@@ -2,7 +2,7 @@ const Cart = require('./cart')
 const Order = require('./order')
 const Product = require('./product')
 const User = require('./user')
-const Whishlist = require('./whishlist')
+const Wishlist = require('./wishlist')
 
 /** Associations */
 
@@ -21,28 +21,28 @@ Product.belongsToMany(Cart, {
     otherKey: 'cart_id',
 });
 
-//Product and Whishlist
-Product.belongsToMany(Whishlist, {
-    as: 'whishlists',
-    through: 'product_whishlist',
+//Product and Wishlist
+Product.belongsToMany(Wishlist, {
+    as: 'wishlists',
+    through: 'product_wishlist',
     foreignKey: 'product_id',
-    otherKey: 'whishlist_id',
+    otherKey: 'wishlist_id',
 });
 
-Whishlist.belongsToMany(Product, {
+Wishlist.belongsToMany(Product, {
     as: 'products',
-    through: 'product_whishlist',
-    foreignKey: 'whishlist_id',
+    through: 'product_wishlist',
+    foreignKey: 'wishlist_id',
     otherKey: 'product_id',
 });
 
-//User and Whishlist
-User.hasMany(Whishlist, {
+//User and Wishlist
+User.hasMany(Wishlist, {
     foreignKey: 'user_id',
-    as: 'whishlists',
+    as: 'wishlists',
 });
 
-Whishlist.belongsTo(User, {
+Wishlist.belongsTo(User, {
     foreignKey: 'user_id',
     as: 'user',
 });
@@ -75,6 +75,6 @@ Cart.belongsTo(User, {
     as: 'user',
 });
 
-module.exports = { Cart, Order, Product, User, Whishlist };
+module.exports = { Cart, Order, Product, User, Wishlist };
 
 

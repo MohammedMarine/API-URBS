@@ -5,11 +5,11 @@ ADD, 0N WISHLIST, 0N PRODUCT
 
 CUSTOMIZE, 01 WISHLIST, 0N USER
 ORDER: code_order, date, paymentMethod
-COMPOSE, 01 CART, 01 ORDER
+COMPOSE, 01 CART, 11 ORDER
 PRODUCT: code_product, name, color, size, price
 
 USER: code_user, firstname, lastname, email, password, address, zipcode
-GENERATE, 01 USER, 0N ORDER
+GENERATE, 0N USER, 01 ORDER
 :
 POSSESS, 0N CART, 0N PRODUCT
 

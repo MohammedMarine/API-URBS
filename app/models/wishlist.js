@@ -1,15 +1,15 @@
 const { DataTypes, Model } = require('sequelize');
 const sequelize = require('../db');
 
-class Whishlist extends Model { }
+class Wishlist extends Model { }
 
-Whishlist.init({
+Wishlist.init({
     name: DataTypes.TEXT,
     user_id: DataTypes.INTEGER
 },
     {
         sequelize,
-        tableName: "whishlist"
+        tableName: "wishlist"
     });
 
-module.exports = Whishlist;
+module.exports = Wishlist;

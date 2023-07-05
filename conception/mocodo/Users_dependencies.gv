@@ -4,8 +4,8 @@ digraph {
   "PRODUCT" -> "ADD"
   "USER" -> "CART"
   "CART" -> "ORDER"
+  "USER" -> "ORDER"
   "CART" -> "POSSESS"
   "PRODUCT" -> "POSSESS"
-  "ORDER" -> "USER"
   "USER" -> "WISHLIST"
 }

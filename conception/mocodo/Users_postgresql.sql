@@ -18,6 +18,7 @@ CREATE TABLE ORDER (
   date VARCHAR(42),
   paymentmethod VARCHAR(42),
   code_cart VARCHAR(42),
+  code_user VARCHAR(42),
   PRIMARY KEY (code_order)
 );
 
@@ -44,7 +45,6 @@ CREATE TABLE USER (
   password VARCHAR(42),
   address VARCHAR(42),
   zipcode VARCHAR(42),
-  code_order VARCHAR(42),
   PRIMARY KEY (code_user)
 );
 
@@ -59,8 +59,8 @@ CREATE TABLE WISHLIST (
 ALTER TABLE ADD ADD FOREIGN KEY (code_product) REFERENCES PRODUCT (code_product);
 ALTER TABLE ADD ADD FOREIGN KEY (code_wishlist) REFERENCES WISHLIST (code_wishlist);
 ALTER TABLE CART ADD FOREIGN KEY (code_user) REFERENCES USER (code_user);
+ALTER TABLE ORDER ADD FOREIGN KEY (code_user) REFERENCES USER (code_user);
 ALTER TABLE ORDER ADD FOREIGN KEY (code_cart) REFERENCES CART (code_cart);
 ALTER TABLE POSSESS ADD FOREIGN KEY (code_product) REFERENCES PRODUCT (code_product);
 ALTER TABLE POSSESS ADD FOREIGN KEY (code_cart) REFERENCES CART (code_cart);
-ALTER TABLE USER ADD FOREIGN KEY (code_order) REFERENCES ORDER (code_order);
 ALTER TABLE WISHLIST ADD FOREIGN KEY (code_user) REFERENCES USER (code_user);
