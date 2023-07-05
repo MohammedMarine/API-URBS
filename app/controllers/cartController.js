@@ -7,7 +7,7 @@ const cartController = {
         try {
             const product = await Product.findByPk(productId); //finding a match for this id in DB
             if (product) {
-                req.session.cart.push(product); //Pushing the product in the user session
+                req.session.cart.push(product); //Pushing the product in the session
                 res.json(cart)
             } else {
                 res.status(404).send('The product you are trying to buy does not exist yet');

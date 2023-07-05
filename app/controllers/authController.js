@@ -7,6 +7,9 @@ const authController = {
         res.send('Create an account to enjoy a personalised shopping experience and faster online checkout.')
     }
 
+    // async createUser (req, res){
+
+    // }
 };
 
 module.exports = authController;

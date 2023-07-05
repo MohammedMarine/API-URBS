@@ -4,6 +4,7 @@ require("dotenv/config");
 //Third party dependencies
 const express = require ("express");
 const cors = require("cors");
+const bodyParser = require('body-parser');
 const multer = require('multer');
 
 //local dependencies
@@ -20,6 +21,7 @@ app.use(cors("*")); //to authorize everybody on URBS API
 
 //Adding body parsers
 app.use(express.urlencoded({ extended: false })); //to extract data from POST request with Express
+app.use(bodyParser.json()); // for parsing application/json
 const multipartParser = multer(); // To extract data from POST request formated in multipart
 app.use(multipartParser.none()); // .none() means we do not expect files, only "classics" inputs.
 app.use(express.json());

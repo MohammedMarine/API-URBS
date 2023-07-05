@@ -7,7 +7,7 @@ const wishlistController = {
         try {
             const product = await Product.findByPk(productId); //finding a match for this id in DB
             if (product) {
-                req.session.wishlist.push(product); //Pushing the product in the user session
+                req.session.wishlist.push(product); //Pushing the product in the session
                 res.json(wishlist)
             } else {
                 res.status(404).send(`The product you wish to buy does not exist yet`);
