@@ -10,7 +10,7 @@ const wishlistController = {
                 req.session.wishlist.push(product); //Pushing the product in the session
                 res.json(wishlist)
             } else {
-                res.status(404).send(`The product you wish to buy does not exist yet`);
+                res.status(404).json('The product you wish to buy does not exist yet');
             }
         } catch (error) {
             console.trace(error);
@@ -23,7 +23,7 @@ const wishlistController = {
         if (wishlist.length > 0) {
             res.json(wishlist)
         } else {
-            res.send('Create a wishlist')
+            res.json('Create a wishlist')
         }
     },
 
@@ -39,10 +39,10 @@ const wishlistController = {
                 if (newWishlist.length > 0) {
                     res.json(newWishlist);
                 } else {
-                    res.send('Create a wishlist')
+                    res.json('Create a wishlist')
                 }
             } else {
-                res.status(404).send('This product can not be removed from your wishlist as it does not exist yet');
+                res.status(404).json('This product can not be removed from your wishlist as it does not exist yet');
             }
         } catch (error) {
             console.trace(error);

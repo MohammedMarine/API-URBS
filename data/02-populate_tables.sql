@@ -12,7 +12,7 @@ INSERT INTO "product" ("id", "name", "color", "size", "price") VALUES
 (5, 'L-Écrin', 'Blueduck', 15, 129),
 (6, 'L-Écrin', 'Redvelvet', 15, 129);
 
-INSERT INTO "user" ("id", "firstname", "lastname", "address", "streetnumber", "zipcode", "email", "password") VALUES --pw firstnamelastname
+INSERT INTO "user" ("id", "firstname", "lastname", "address", "streetnumber", "zipcode", "email", "password") VALUES
 (1, 'Steevie', 'Wonder',  'Musician Street', 20, 7519, 'steevie@wonder.com', '$2a$10$3T0mYlCAAJBjbhlSthc2SeuKbzfmWlRvdtNPI4ynPt1UKrBd8q12C'),
 (2, 'Michelle', 'Obama', 'White House Street', 4, 8245, 'michelle@obama.com', '$2a$10$Cdj848De7ETFB/mE/PTipOW2QYEQif77d.VI/v6B3FI2.4pQMJ/kO');
 

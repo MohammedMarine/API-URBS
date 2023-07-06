@@ -10,7 +10,7 @@ const cartController = {
                 req.session.cart.push(product); //Pushing the product in the session
                 res.json(cart)
             } else {
-                res.status(404).send('The product you are trying to buy does not exist yet');
+                res.status(404).json('The product you are trying to buy does not exist yet');
             }
         } catch (error) {
             console.trace(error);
@@ -23,7 +23,7 @@ const cartController = {
         if (cart.length > 0) {
             res.json(cart)
         } else {
-            res.send('Your cart is empty')
+            res.json('Your cart is empty')
         }
     },
 
@@ -39,10 +39,10 @@ const cartController = {
             if(newCart.length > 0){
             res.json(newCart)
             } else {
-                res.send('Your cart is empty')
+                res.json('Your cart is empty')
             }
             } else {
-                res.status(404).send('This product can not be removed from your cart as it does not exist yet');
+                res.status(404).json('This product can not be removed from your cart as it does not exist yet');
             }
         } catch (error) {
             console.trace(error);
