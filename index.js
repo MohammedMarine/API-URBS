@@ -6,6 +6,7 @@ const express = require ("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const multer = require('multer');
+// const jwt = require('jsonwebtoken');
 
 //local dependencies
 const router = require ('./app/router');
@@ -27,13 +28,14 @@ app.use(multipartParser.none()); // .none() means we do not expect files, only "
 app.use(express.json());
 app.use(initSession);
 app.use(initCart);
-app.use(initWishlist)
+app.use(initWishlist);
 
 //Plugging router
 app.use(router);
 
+
 //Starting the application
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-    console.log(`✅ Listening at http://localhost:${PORT}`);
+  console.log(`✅ Listening at http://localhost:${PORT}`);
 });

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urbs API - Doc</title>
+</head>
+
+<body>
+    <div style="margin: 5em auto; width: 700px; line-height: 1.5">
+        <h1 style="text-align: center">Welcome here!</h1>
+        <p>If you see this message, it means that Urbs API is launched🚀 !</p>
+        <div>Here is a roadmap to serve your front :</div>
+        <ul style="display: inline-block; margin-top: .2em">
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">👝 Products : <a href="/products" target="_blank"
+                    style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /products</code></a>
+                <p style="margin: 0 1em;">res: [{}, {} ...]</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;"> 👝 Product : <a href="/products/:id" target="_blank"
+                    style="text-decoration: none; color: black;"><code
+                        style="margin: 0 0.5em;">GET /products/:id</code></a>
+                <p style="margin: 0 1em;">res: {}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🛒 Cart : <a href="/cart" target="_blank"
+                    style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /cart</code></a>
+                <p style="margin: 0 1em;">res: {string} or [{}, ...]</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🛒+👝 Cart : <a href="/cart/add/:id" target="_blank"
+                    style="text-decoration: none; color: black;"><code
+                        style="margin: 0 0.5em;">GET /cart/add/:id</code></a>
+                <p style="margin: 0 1em;">res: [{}, ...]</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🛒-👝 Cart : <a href="/cart/remove/:id" target="_blank"
+                    style="text-decoration: none; color: black;"><code
+                        style="margin: 0 0.5em;">GET /cart/remove/:id</code></a>
+                <p style="margin: 0 1em;">res: [{}, ...] or {string}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🛒✅ Cart : <a href="/cart/validate" target="_blank"
+                    style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /cart/validate</code></a>
+                <p style="margin: 0 1em;">res: {string}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🤔 Wishlist : <a href="/wishlist" target="_blank"
+                    style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /wishlist</code></a>
+                <p style="margin: 0 1em;">res: {string} or [{}, ...]</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🤔+👝 Wishlist : <a href="/wishlist/add/:id" target="_blank"
+                    style="text-decoration: none; color: black;"><code
+                        style="margin: 0 0.5em;">GET /wishlist/add/:id</code></a>
+                <p style="margin: 0 1em;">res: [{}, ...]</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🤔-👝 Wishlist : <a href="/wishlist/remove/:id" target="_blank"
+                    style="text-decoration: none; color: black;"><code
+                        style="margin: 0 0.5em;">GET /wishlist/remove/:id</code></a>
+                <p style="margin: 0 1em;">res: [{}, ...] or {string}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;"> 🆔 Register : <code
+                    style="margin: 0.3em 0.5em;">POST /register</code>
+                <em>data</em> : <code style="margin: 0.3em 0.5em;">email</code>, <code
+                    style="margin: 0.3em 0.5em;">password</code> and <code style="margin: 0.3em 0.5em;">confirmation</code>
+                    <p style="margin: 0 1em;">res: {string}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;"> 🆔 Login : <code style="margin: 0.3em 0.5em;">POST /login</code>
+                <em>data</em> : <code style="margin: 0.3em 0.5em;">email</code> and <code style="margin: 0.3em 0.5em;">password</code>
+                <p style="margin: 0 1em;">res: {logged: boolean, pseudo, token}</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

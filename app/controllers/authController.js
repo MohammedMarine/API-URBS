@@ -1,34 +1,58 @@
+require("dotenv/config");
 const { User } = require('../models');
-const bcrypt = require ('bcrypt');
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+
 
 const authController = {
-    register(req, res) {
-        res.json('Create an account to enjoy a personalised shopping experience and faster online checkout.');
-    },
+  login(req, res) {
+    res.json('Sign in with your email and password.');
+  },
 
-    async createUser (req, res){
-        try {
-            const registeredUser = await User.findOne({
-                where: {email},
-            });
-            if(registeredUser){
-                return res.json('A problem occured, please try again later');
-            };
-            const salt = await bcrypt.genSalt(10) // salt rounds => 10
-            const password = req.body.password;
-            const encryptedPassword = await bcrypt.hash(password, salt);
-            await User.create({
-                email,
-                password: encryptedPassword,
-                role: 'user',
-            });
-            res.json('Registration successful')
-        } catch (error) {
-            console.log(error.message);
-            res.status(500).json(error.message);
-        }
+  async signin(req, res) {
+    const { email, password } = req.body;
+    try {
+      const registeredUser = await User.findOne({ where: { email } });
+      if (!registeredUser) {
+        return res.json('A problem occured, please try again later');
+      }
+      const passwordOk = await bcrypt.compare(password, registeredUser.password);
+      if (!passwordOk) {
+        return res.json('A problem occured, please try again later');
+      } else {
+        const accessToken = jwt.sign(email, process.env.ACCESS_TOKEN_SECRET);
+        res.json({
+          logged: true,
+          pseudo: registeredUser.firstname,
+          accessToken: accessToken
+        });
+      }
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json(error.message);
+    }
+  },
 
-     }
+  async showAccount(req, res) {
+    try {
+      const email = req.user.email;
+      const user = await User.findOne({ where: { email } });
+      res.json(user);
+    } catch (error) {
+      console.log(error.message);
+      res.status(500).json(error.message);
+    }
+  },
+
+//   destroy(req, res) {
+//     const user = req.user;
+//     console.log(user);
+//     if (user){
+//       req.user.destroy();
+//       res.json('See you next time');
+//     } else {
+//       res.status(401).json('You are not logged in');
+//     }}
 };
 
 module.exports = authController;

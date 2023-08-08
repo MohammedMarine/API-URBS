@@ -1,0 +1,29 @@
+GET http://[::1]:3000/cart
+
+###
+
+GET http://[::1]:3000/cart/add/5
+
+###
+
+POST http://[::1]:3000/login/signin
+Content-Type: application/json
+
+{
+    "email": "michelle@obama.com",
+    "password": "michelleobama"
+}
+
+###
+
+GET http://[::1]:3000/cart/validate
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bWljaGVsbGVAb2JhbWEuY29t.BOnrpGQ-qKUDHURDCWwT6jnrjoHW_ISjw6xG-DzL7_I
+
+###
+
+GET http://[::1]:3000/account
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bWljaGVsbGVAb2JhbWEuY29t.BOnrpGQ-qKUDHURDCWwT6jnrjoHW_ISjw6xG-DzL7_I
+
+###
+
+GET http://[::1]:3000/products
