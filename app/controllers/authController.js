@@ -35,24 +35,32 @@ const authController = {
 
   async showAccount(req, res) {
     try {
-      const email = req.user.email;
+      const email = req.user;
       const user = await User.findOne({ where: { email } });
-      res.json(user);
+      console.log(user);
+      if (!email) {
+        return res.status(401).json('You are not logged in');
+      }
+      if (!user) {
+        return res.json('A problem occured, please try again later');
+      }
+      res.json({
+        id: user.id,
+        firstname: user.firstname,
+        lastname: user.lastname,
+        email: user.email,
+        address: user.address,
+        streetnumber: user.streetnumber,
+        zipcode: user.zipcode,
+        city: user.city,
+        country: user.country,
+        phonenumber: user.phonenumber
+      });
     } catch (error) {
       console.log(error.message);
       res.status(500).json(error.message);
     }
   },
-
-//   destroy(req, res) {
-//     const user = req.user;
-//     console.log(user);
-//     if (user){
-//       req.user.destroy();
-//       res.json('See you next time');
-//     } else {
-//       res.status(401).json('You are not logged in');
-//     }}
 };
 
 module.exports = authController;

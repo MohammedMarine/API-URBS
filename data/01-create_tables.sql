@@ -71,6 +71,9 @@ CREATE TABLE "user" (
   "address" TEXT NULL,
   "streetnumber" INTEGER NULL,
   "zipcode" INTEGER NULL,
+  "city" TEXT NULL,
+  "country" TEXT NULL,
+  "phonenumber" INTEGER NULL,
   "order_id" INTEGER NULL REFERENCES "order"("id"),
   "created_at" timestamptz NOT NULL DEFAULT CURRENT_TIMESTAMP,
   "updated_at" timestamptz

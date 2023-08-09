@@ -22,7 +22,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bWljaGVsbGVAb2JhbWEuY29t.BOnrpGQ-qKUD
 ###
 
 GET http://[::1]:3000/account
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.bWljaGVsbGVAb2JhbWEuY29t.BOnrpGQ-qKUDHURDCWwT6jnrjoHW_ISjw6xG-DzL7_I
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.c3RlZXZpZUB3b25kZXIuY29t.QHx_s5pAPxe16Cgt2OLxAN7cW4a7fepz2jtnAI2lsFs
 
 ###
 

@@ -38,7 +38,7 @@
             </li>
             <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🛒✅ Cart : <a href="/cart/validate" target="_blank"
                     style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /cart/validate</code></a>
-                <p style="margin: 0 1em;">res: {string}</p>
+                <em>header</em> : <code style="margin: 0.3em 0.5em;">Authorization: Bearer yourToken</code> <p style="margin: 0 1em;">res: {string}</p>
             </li>
             <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;">🤔 Wishlist : <a href="/wishlist" target="_blank"
                     style="text-decoration: none; color: black;"><code style="margin: 0 0.5em;">GET /wishlist</code></a>
@@ -61,8 +61,12 @@
                     <p style="margin: 0 1em;">res: {string}</p>
             </li>
             <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;"> 🆔 Login : <code style="margin: 0.3em 0.5em;">POST /login</code>
-                <em>data</em> : <code style="margin: 0.3em 0.5em;">email</code> and <code style="margin: 0.3em 0.5em;">password</code>
+                <em >data</em> : <code style="margin: 0.3em 0.5em;">email</code> and <code style="margin: 0.3em 0.5em;">password</code>
                 <p style="margin: 0 1em;">res: {logged: boolean, pseudo, token}</p>
+            </li>
+            <li style="display: flex; margin: 0.25em 0em; border: 1px solid #2ea00985;"> ⚙️ Account : <code style="margin: 0.3em 0.5em;">GET /account</code>
+                <em>header</em> : <code style="margin: 0.3em 0.5em;">Authorization: Bearer yourToken</code>
+                <p style="margin: 0 1em;">res: {}</p>
             </li>
         </ul>
     </div>
