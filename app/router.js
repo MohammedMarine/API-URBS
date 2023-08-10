@@ -34,9 +34,9 @@ router.get('/', (req, res) => {
 // });
 
 /** Contact */
-router.get('/contact', (req, res) => {
-  res.json('contact');
-});
+// router.get('/contact', (req, res) => {
+//   res.json('contact');
+// });
 router.post('/contact',); // WIP
 
 

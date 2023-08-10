@@ -11,6 +11,8 @@ const authController = {
 
   async signin(req, res) {
     const { email, password } = req.body;
+    //transform the email into an object to pass it into jwt.sign otherwith we pass a string and get always the same token for a user
+    const user = { email };
     try {
       const registeredUser = await User.findOne({ where: { email } });
       if (!registeredUser) {
@@ -20,7 +22,7 @@ const authController = {
       if (!passwordOk) {
         return res.json('A problem occured, please try again later');
       } else {
-        const accessToken = jwt.sign(email, process.env.ACCESS_TOKEN_SECRET);
+        const accessToken = jwt.sign(user, process.env.ACCESS_TOKEN_SECRET);
         res.json({
           logged: true,
           pseudo: registeredUser.firstname,
